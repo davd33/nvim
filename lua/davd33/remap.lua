@@ -1,4 +1,3 @@
-print("Loading Remaps")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
