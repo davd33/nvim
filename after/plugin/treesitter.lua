@@ -16,8 +16,10 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'rust', 'python', 'javascript', 'lua', 'html' },
   callback = function()
     vim.treesitter.start()                                    -- highlighting
-    --vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'     -- folds
-    --vim.wo.foldmethod = 'expr'
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'     -- folds
+    vim.wo.foldmethod = 'expr'
+    vim.opt.foldlevel = 99
+    vim.opt.foldlevelstart = 99
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" -- indentation
   end,
 })
