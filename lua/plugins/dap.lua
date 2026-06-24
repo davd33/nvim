@@ -4,6 +4,53 @@ return {
         config = function ()
             local dap, dapui = require('dap'), require('dapui')
 
+            local python = "python3"
+
+            dap.adapters.python = {
+                type = "executable",
+                command = python,
+                args = {
+                    "-m",
+                    "debugpy.adapter",
+                },
+            }
+
+            dap.configurations.python = {
+                {
+                    type = "python",
+                    request = "launch",
+                    name = "Launch current file",
+
+                    program = "${file}",
+                    cwd = "${workspaceFolder}",
+
+                    console = "integratedTerminal",
+                    justMyCode = true,
+                },
+                {
+                    type = "python",
+                    request = "launch",
+                    name = "Launch with arguments",
+
+                    program = function()
+                        return vim.fn.input(
+                            "Script: ",
+                            vim.fn.getcwd() .. "/",
+                            "file"
+                        )
+                    end,
+                    cwd = "${workspaceFolder}",
+
+                    args = function()
+                        local args = vim.fn.input("Arguments: ")
+                        return vim.split(args, " ", { trimempty = true })
+                    end,
+
+                    console = "integratedTerminal",
+                    justMyCode = true,
+                },
+            }
+
             local rust_debugger = vim.fn.exepath(vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe")
             if rust_debugger ~= "" then
                 dap.adapters.codelldb = {
