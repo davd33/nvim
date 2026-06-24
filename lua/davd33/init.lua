@@ -1,6 +1,6 @@
+require("davd33.set")
 require("davd33.remap")
 require("davd33.lazy")
 require("davd33.lsp")
-require("davd33.set")
 require("davd33.rust_custom")
 require("davd33.layouts_save")
