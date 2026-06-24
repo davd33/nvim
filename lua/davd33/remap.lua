@@ -1,8 +1,17 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
+-- files tree 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- moving selection up and down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- joining line below without moving the cursor
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- replace the current word in the whole buffer
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- LSP
 vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>rf", vim.lsp.buf.rename)
