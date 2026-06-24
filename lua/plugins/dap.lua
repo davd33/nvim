@@ -51,18 +51,18 @@ return {
                 },
             }
 
-            local rust_debugger = vim.fn.exepath(vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe")
-            if rust_debugger ~= "" then
-                dap.adapters.codelldb = {
-                    type = "server",
-                    port = "${port}",
-                    executable = {
-                        command = vim.fn.stdpath("data")
-                            .. "/mason/packages/codelldb/extension/adapter/codelldb.exe",
-                        args = { "--port", "${port}" },
-                    },
-                }
+            local rust_debugger = vim.fn.exepath("codelldb")
+            if rust_debugger == "" then
+                print("Can't find codelldb for RUST debugging")
             end
+            dap.adapters.codelldb = {
+                type = "server",
+                port = "${port}",
+                executable = {
+                    command = rust_debugger,
+                    args = { "--port", "${port}" },
+                },
+            }
 
             dap.configurations.rust = {
                 {
