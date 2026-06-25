@@ -23,6 +23,7 @@ end)
 
 
 -- Nvim DAP
+vim.keymap.set("n", "<leader>ds", ":RustDebugArgs<CR>", { desc = "Start Debugger with arguments" })
 vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.step_over()<CR>", { desc = "Debugger step over" })
 vim.keymap.set("n", "<F6>", "<cmd>lua require'dap'.step_into()<CR>", { desc = "Debugger step into" })
 vim.keymap.set("n", "<F7>", "<cmd>lua require'dap'.step_out()<CR>", { desc = "Debugger step out" })

@@ -51,40 +51,6 @@ return {
                 },
             }
 
-            local rust_debugger = vim.fn.exepath("codelldb")
-            if rust_debugger == "" then
-                print("Can't find codelldb for RUST debugging")
-            end
-            dap.adapters.codelldb = {
-                type = "server",
-                port = "${port}",
-                executable = {
-                    command = rust_debugger,
-                    args = { "--port", "${port}" },
-                },
-            }
-
-            dap.configurations.rust = {
-                {
-                    name = "Cargo Run",
-                    type = "codelldb",
-                    request = "launch",
-                    cwd = "${workspaceFolder}",
-                    program = function ()
-                        return vim.fn.input(
-                            "Executable: ",
-                            vim.fn.getcwd() .. "/target/debug/",
-                            "file"
-                        )
-                        --return vim.fn.getcwd() .. 'target/debug' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
-                    end,
-                    args = function()
-                        local args = vim.fn.input("Arguments: ")
-                        return vim.split(args, " ", { trimempty = true })
-                    end,
-                },
-            }
-
             dap.listeners.before.attach.dapui_config = function ()
                 dapui.open()
             end
@@ -96,6 +62,9 @@ return {
             end
             dap.listeners.before.event_exited.dapui_config = function ()
                 dapui.open()
+            end
+            dap.listeners.before.launch.rust_terminal = function(_, config)
+                config.console = "integratedTerminal"
             end
         end
     },
