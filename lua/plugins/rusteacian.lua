@@ -24,9 +24,6 @@ return {
 
         local cfg = require('rustaceanvim.config')
 
-        print(codelldb_path)
-        print(liblldb_path)
-
         vim.api.nvim_create_user_command("RustDebugArgs", function()
             vim.ui.input({
                 prompt = "Program args: ",
