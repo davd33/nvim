@@ -63,6 +63,13 @@ return {
             dap.listeners.before.event_exited.dapui_config = function ()
                 dapui.open()
             end
+
+            -- external terminal
+            dap.defaults.fallback.external_terminal = {
+                command = '/usr/bin/alacritty';
+                args = {'-e'};
+            }
+            dap.defaults.fallback.force_external_terminal = true
         end
     },
     {
