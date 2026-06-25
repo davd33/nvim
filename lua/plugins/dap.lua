@@ -63,9 +63,6 @@ return {
             dap.listeners.before.event_exited.dapui_config = function ()
                 dapui.open()
             end
-            dap.listeners.before.launch.rust_terminal = function(_, config)
-                config.console = "integratedTerminal"
-            end
         end
     },
     {
