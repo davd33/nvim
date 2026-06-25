@@ -66,7 +66,7 @@ return {
 
             -- external terminal
             dap.defaults.fallback.external_terminal = {
-                command = '/usr/bin/alacritty';
+                command = 'alacritty';
                 args = {'-e'};
             }
             dap.defaults.fallback.force_external_terminal = true
