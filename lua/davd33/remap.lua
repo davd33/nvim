@@ -1,5 +1,5 @@
 -- files tree 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
 
 -- moving selection up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
