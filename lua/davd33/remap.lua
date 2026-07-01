@@ -8,6 +8,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- joining line below without moving the cursor
 vim.keymap.set("n", "J", "mzJ`z")
 
+-- Live Grep current word
+vim.keymap.set("n", "<leader>lg", "yiw+<leader>fg", {remap=true})
+
 -- replace the current word in the whole buffer
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
