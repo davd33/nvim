@@ -21,6 +21,7 @@ vim.keymap.set("n", "<leader>th", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
 
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 
 -- Nvim DAP
 vim.keymap.set("n", "<leader>ds", ":RustDebugArgs<CR>", { desc = "Start Debugger with arguments" })
