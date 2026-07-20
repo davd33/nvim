@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- LSP
 vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<leader>rf", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
 
 vim.keymap.set("n", "<leader>th", function()
