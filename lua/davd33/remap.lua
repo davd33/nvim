@@ -15,10 +15,11 @@ vim.keymap.set("n", "<leader>lg", "yiw+<leader>fg", {remap=true})
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- LSP
-vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename)
-vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
+vim.keymap.set("v", "<leader>ca", ":Lspsaga code_action<CR>")
+vim.keymap.set("n", "<leader>ca", ":Lspsaga code_action<CR>")
+vim.keymap.set("n", "<leader>rr", ":Lspsaga rename<CR>")
+vim.keymap.set("n", "<leader>gri", ":Lspsaga incoming_calls<CR>")
+vim.keymap.set("n", "<leader>gro", ":Lspsaga outgoing_calls<CR>")
 
 vim.keymap.set("n", "<leader>th", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
