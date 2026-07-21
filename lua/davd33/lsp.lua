@@ -20,3 +20,8 @@ vim.api.nvim_create_autocmd("Filetype", {
 	end
 })
 
+-- Display all definitions found
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', 'gd', function ()
+    builtin.lsp_definitions({ jump_type = "never" })
+end, { desc = 'Telescope LSP Definitions' })

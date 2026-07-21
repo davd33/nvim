@@ -9,7 +9,12 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Live Grep current word
-vim.keymap.set("n", "<leader>lg", "yiw+<leader>fg", {remap=true})
+vim.keymap.set("n", "<leader>lg", function()
+  local current_word = vim.fn.expand("<cword>")
+  require("telescope.builtin").live_grep({
+    default_text = current_word,
+  })
+end, { desc = "Live grep word under cursor" })
 
 -- replace the current word in the whole buffer
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
