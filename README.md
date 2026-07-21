@@ -4,8 +4,9 @@
 
 # Installed with Mason
 
+◍ typescript-language-server (keywords: typescript, javascript)
+◍ biome (keywords: json, javascript, typescript)
 ◍ jdtls (keywords: java)
-    This should come with lombok as well.
 ◍ codelldb (keywords: c, c++, rust, zig)
 ◍ debugpy (keywords: python)
 ◍ superhtml (keywords: html, superhtml)
