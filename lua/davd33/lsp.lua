@@ -1,3 +1,12 @@
+local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+vim.lsp.config('ts_ls', { capabilities=capabilities })
+vim.lsp.enable('ts_ls')
+vim.lsp.config('lua_ls', { capabilities=capabilities })
+vim.lsp.enable('lua_ls')
+vim.lsp.config("basedpyright", { capabilities = capabilities })
+vim.lsp.enable('basedpyright')
+
 -- Diagnostics
 vim.diagnostic.config({
     virtual_text = true,
