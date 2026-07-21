@@ -207,7 +207,7 @@ return {
         -- (see docs or lua/kulala/config/keymaps.lua)
         -- or override default keymaps as shown in the example below.
         ---@type boolean|table
-        global_keymaps = false,
+        global_keymaps = true,
         --[[
         {
           ["Send request"] = { -- sets global mapping
