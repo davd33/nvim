@@ -1,12 +1,14 @@
 vim.lsp.enable('lua_ls')
-vim.lsp.enable('basedpyright')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+-- Python
 vim.lsp.config("basedpyright", {
     capabilities = capabilities,
 })
+vim.lsp.enable('basedpyright')
 
+-- Diagnostics
 vim.diagnostic.config({
     virtual_text = true,
     virtual_lines = false, --{ current_line = true },
@@ -27,3 +29,4 @@ vim.api.nvim_create_autocmd("Filetype", {
 		})
 	end
 })
+

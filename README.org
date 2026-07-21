@@ -1,3 +1,0 @@
-# Outline shortcuts
-
-![outline cheatsheet](./images/outline-cheatsheet.png)
