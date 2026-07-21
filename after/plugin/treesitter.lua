@@ -1,4 +1,4 @@
-require('nvim-treesitter').install { 'rust', 'javascript', 'html', 'lua', 'python' }
+require('nvim-treesitter').install { 'rust', 'javascript', 'html', 'lua', 'python', 'java' }
 require("nvim-treesitter").setup {
     highlight = {
         enable = true,
@@ -13,7 +13,7 @@ require("nvim-treesitter").setup {
 }
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'rust', 'python', 'javascript', 'lua', 'html' },
+  pattern = { 'rust', 'python', 'javascript', 'lua', 'html', 'java' },
   callback = function()
     vim.treesitter.start()                                    -- highlighting
     vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'     -- folds

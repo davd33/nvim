@@ -1,8 +1,8 @@
 vim.lsp.enable('lua_ls')
 
+-- Python
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- Python
 vim.lsp.config("basedpyright", {
     capabilities = capabilities,
 })
