@@ -1,3 +1,6 @@
+-- mini files
+vim.keymap.set("n", "<leader>ll", require('mini.files').open)
+
 -- files tree 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
 
