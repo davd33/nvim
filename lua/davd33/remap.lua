@@ -1,6 +1,7 @@
 -- telescope tabs
 vim.keymap.set("n", "<leader>ft", ":Telescope telescope-tabs list_tabs<CR>")
 vim.keymap.set("n", "<leader>tt", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>")
 
 -- files tree 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
