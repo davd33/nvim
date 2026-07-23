@@ -1,3 +1,7 @@
+-- telescope tabs
+vim.keymap.set("n", "<leader>ft", ":Telescope telescope-tabs list_tabs<CR>")
+vim.keymap.set("n", "<leader>tt", ":tabnew<CR>")
+
 -- files tree 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
 
@@ -25,6 +29,7 @@ vim.keymap.set("n", "<leader>ca", ":Lspsaga code_action<CR>")
 vim.keymap.set("n", "<leader>rr", ":Lspsaga rename<CR>")
 vim.keymap.set("n", "<leader>gri", ":Lspsaga incoming_calls<CR>")
 vim.keymap.set("n", "<leader>gro", ":Lspsaga outgoing_calls<CR>")
+vim.keymap.set("n", "K", ":Lspsaga hover_doc<CR>")
 
 vim.keymap.set("n", "<leader>th", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
