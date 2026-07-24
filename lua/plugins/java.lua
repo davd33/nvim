@@ -10,6 +10,13 @@ return {
         vim.lsp.config('jdtls', {
             settings = {
                 java = {
+                    format = {
+                        enabled = true,
+                        settings = {
+                            url = vim.fn.stdpath("config") .. "jdtls-config/eclipse-java-google-style.xml",
+                            profile = "GoogleStyle"
+                        }
+                    },
                     configuration = {
                         runtimes = {
                             {

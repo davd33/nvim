@@ -31,6 +31,7 @@ vim.keymap.set("n", "<leader>rr", ":Lspsaga rename<CR>")
 vim.keymap.set("n", "<leader>gri", ":Lspsaga incoming_calls<CR>")
 vim.keymap.set("n", "<leader>gro", ":Lspsaga outgoing_calls<CR>")
 vim.keymap.set("n", "K", ":Lspsaga hover_doc<CR>")
+vim.keymap.set("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<CR>")
 
 vim.keymap.set("n", "<leader>th", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
